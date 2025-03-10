@@ -1,0 +1,39 @@
+<mvc:View
+    controllerName="com.soruce.sourceListPortal.controller.Source"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:unified="sap.ui.unified">
+
+    <VBox id="_IDGenVBox">
+        <Table id="sourceTable" items="{/SourceList}">
+            <columns>
+                <Column id="_IDGenColumn"><Text id="_IDGenText" text="Material" /></Column>
+                <Column id="_IDGenColumn1"><Text id="_IDGenText1" text="Plant" /></Column>
+                <Column id="_IDGenColumn2"><Text id="_IDGenText2" text="Vendor" /></Column>
+                <Column id="_IDGenColumn3"><Text id="_IDGenText3" text="Vendor Brand Name" /></Column>
+                <Column id="_IDGenColumn4"><Text id="_IDGenText4" text="Valid Till" /></Column>
+                <Column id="_IDGenColumn5"><Text id="_IDGenText5" text="Remarks" /></Column>
+                <Column id="_IDGenColumn6"><Text id="_IDGenText6" text="Attachment" /></Column>
+                <Column id="_IDGenColumn7"><Text id="_IDGenText7" text="Action" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem id="_IDGenColumnListItem">
+                    <cells>
+                        <Text id="_IDGenText8" text="{Material}" />
+                        <Text id="_IDGenText9" text="{Plant}" />
+                        <Text id="_IDGenText10" text="{Vendor}" />
+                        <Text id="_IDGenText11" text="{VendorBrandName}" />
+                        <Text id="_IDGenText12" text="{ValidTill}" />
+                        <Text id="_IDGenText13" text="{Remarks}" />
+                        <Text id="_IDGenText14" text="{Attachment}" />
+                        <HBox id="_IDGenHBox">
+                            <Button id="_IDGenButton2" icon="sap-icon://edit" press="onEdit" />
+                            <Button id="_IDGenButton3" icon="sap-icon://duplicate" press="onDuplicate" />
+                            <Button id="_IDGenButton4" icon="sap-icon://download" press="onDownload" />
+                        </HBox>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </VBox>
+</mvc:View>
