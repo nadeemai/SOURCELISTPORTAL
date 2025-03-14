@@ -1,0 +1,54 @@
+.customTile {
+    width: 180px; /* Adjusted to 180px to match the width in the figure */
+    height: 80px; /* Adjusted to 80px to match the height in the figure */
+    margin: 0.1rem; /* Minimal spacing between tiles */
+}
+
+#tileGrid {
+    padding: 0.2rem; /* Minimal padding for the grid */
+    display: flex; /* Use flexbox to force tiles into a single line */
+    flex-wrap: nowrap; /* Prevent wrapping to ensure a single line */
+    overflow-x: auto; /* Allow horizontal scrolling if tiles overflow */
+}
+
+.sapMGenericTile {
+    border-radius: 4px; /* Reduced for a more compact look */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Slightly reduced shadow */
+    background-color: #2b2f31; /* Dark background to match the figure */
+    border: 1px solid #ffffff; /* Light border to match the figure */
+}
+
+#draftTile {
+    border: 2px solid #005b94; /* Blue border for My Draft Request */
+}
+
+#sentBackTile {
+    border: 2px solid #00c1de; /* Light blue border for Sent Back Request */
+}
+
+#rejectedTile {
+    border: 2px solid #ff0000; /* Red border for Rejected Request */
+}
+
+#inProgressTile {
+    border: 2px solid #ff8c00; /* Orange border for In-Progress Request */
+}
+
+#allTile {
+    border: 2px solid #00cc00; /* Green border for All Requests */
+}
+
+.sapMGenericTile .sapMGTHeader {
+    color: #ffffff; /* White text color for the header */
+    font-size: 0.9rem; /* Adjusted font size to fit the tile */
+}
+
+.sapMGenericTile .sapMGTScope {
+    color: #d3d7d9; /* Light gray subtitle color */
+    font-size: 0.7rem; /* Adjusted font size to fit the tile */
+}
+
+.sapMNumericContent {
+    font-size: 1.2rem; /* Adjusted font size to fit the tile */
+    color: #ffffff; /* White text color for numeric content */
+}
