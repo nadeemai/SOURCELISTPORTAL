@@ -12,40 +12,48 @@ sap.ui.define([
         onInit: function () {
             var oData = {
                 items: [
-                    { requestId: "RM00000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM00000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM00000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM00000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM00000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "1000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM00000005", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "1000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" }
+                    { requestId: "RM0000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "11000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000002", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "12000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "13000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000004", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "14000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000005", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "15000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000006", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "16000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000007", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "17000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000008", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "18000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000008", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "19000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000009", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "10000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000010", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "110000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000011", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "112000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000012", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "113000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000013", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "114000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000014", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "115000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000015", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "116000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000016", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "117000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000017", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "118000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000018", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "119000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000019", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "120000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000020", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "121000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000021", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "122000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000022", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "123000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000023", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "124000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000024", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "125000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000025", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "126000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000026", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "127000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000027", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "128000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000028", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "129000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000029", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "130000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000030", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "131000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000031", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "132000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000032", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "133000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000033", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "134000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000034", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "135000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000035", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "136000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000036", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "137000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000037", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "138000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000038", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "139000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000039", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "140000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000040", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "141000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000041", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "142000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
                 ],
                 draftCount: 0,
                 sentBackCount: 0,
@@ -158,16 +166,8 @@ sap.ui.define([
 
         onUploadPress: function () {
             var oFileUploader = this.byId("fileUploader");
-            if (!oFileUploader) {
-                oFileUploader = new sap.ui.unified.FileUploader({
-                    id: this.createId("fileUploader"),
-                    uploadComplete: this.onFileChange.bind(this),
-                    change: this.onFileChange.bind(this)
-                });
-                this.getView().addDependent(oFileUploader);
-            }
             oFileUploader.clear();
-            oFileUploader.$().find("input[type=file]").click();
+            oFileUploader.openFilePicker(); // Trigger file picker dialog
         },
 
         onFileChange: function (oEvent) {
@@ -215,6 +215,13 @@ sap.ui.define([
             };
 
             oReader.readAsText(oFile);
+        },
+
+        onUploadComplete: function (oEvent) {
+            var sResponse = oEvent.getParameter("response");
+            if (sResponse) {
+                MessageToast.show("Upload complete: " + sResponse);
+            }
         },
 
         onTableSelectionChange: function (oEvent) {
@@ -311,4 +318,4 @@ sap.ui.define([
             MessageToast.show("New Source List created successfully!");
         }
     });
-});
+})
