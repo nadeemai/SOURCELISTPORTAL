@@ -329,7 +329,6 @@ sap.ui.define([
 
 // SORTED LIST CODE 
 
-
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
@@ -337,29 +336,48 @@ sap.ui.define([
     "sap/m/MessageToast",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/model/Sorter"  // Added Sorter dependency
-], function (Controller, JSONModel, MessageBox, MessageToast, Filter, FilterOperator, Sorter) {
+    "sap/ui/model/Sorter",
+    "sap/m/Dialog",
+    "sap/m/RadioButtonGroup",
+    "sap/m/RadioButton",
+    "sap/m/Label",
+    "sap/m/Button",
+    "sap/ui/unified/FileUploader"
+], function (Controller, JSONModel, MessageBox, MessageToast, Filter, FilterOperator, Sorter, Dialog, RadioButtonGroup, RadioButton, Label, Button, FileUploader) {
     "use strict";
 
     return Controller.extend("com.tableentry.tablestructure.controller.Table_Entry", {
         onInit: function () {
             var oData = {
                 items: [
-                    { requestId: "RM0000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "11000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM0000005", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "15000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM0000008", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "19000", status: "Send Back", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Send Back" },
-                    { requestId: "RM0000009", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "10000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM0000009", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "10000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM0000009", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "10000", status: "Pending Request", pendingWith: "PH1@pdilite.coPH1@pdilite.com", requestAging: "Pending Request" },
-                    { requestId: "RM0000012", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "113000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM0000017", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "118000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM0000017", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "118000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
-                    { requestId: "RM0000027", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "128000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM0000028", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "129000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM0000028", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "129000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
-                    { requestId: "RM0000035", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "136000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
-                    { requestId: "RM0000035", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "136000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
-                    { requestId: "RM0000036", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "137000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" }
+                    { requestId: "RM0000001", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "11000", status: "Send Back", pendingWith: "PH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000002", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "12000", status: "Send Back", pendingWith: "PH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000003", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "13000", status: "Send Back", pendingWith: "PH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000004", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "14000", status: "Send Back", pendingWith: "PH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000005", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "15000", status: "Send Back", pendingWith: "PH1@pdilite.com", requestAging: "Send Back" },
+                    { requestId: "RM0000010", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "10000", status: "Pending Request", pendingWith: "PH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000011", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "110000", status: "Pending Request", pendingWith: "PH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000012", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "112000", status: "Pending Request", pendingWith: "PH1@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000013", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "113000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000014", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "114000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000018", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "118000", status: "Rejected", pendingWith: "PH1@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000019", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "119000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Rejected" },
+                    { requestId: "RM0000020", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "120000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Rajected" },
+                    { requestId: "RM0000021", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "121000", status: "Rejected", pendingWith: "PH2@pdilite.com", requestAging: "Rajected" },
+                    { requestId: "RM0000022", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "122000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000025", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "125000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000026", createdBy: "seller", createdOn: "Feb 02, 2025", purchaseOrg: "126000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000027", createdBy: "Buyer", createdOn: "Feb 02, 2025", purchaseOrg: "127000", status: "Pending Request", pendingWith: "PH2@pdilite.com", requestAging: "Pending Request" },
+                    { requestId: "RM0000028", createdBy: "seller", createdOn: "Feb 03, 2025", purchaseOrg: "128000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000029", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "129000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000030", createdBy: "seller", createdOn: "Feb 03, 2025", purchaseOrg: "130000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000031", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "131000", status: "Approved", pendingWith: "PH3@pdilite.com", requestAging: "Approved" },
+                    { requestId: "RM0000037", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "137000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
+                    { requestId: "RM0000038", createdBy: "seller", createdOn: "Feb 03, 2025", purchaseOrg: "138000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
+                    { requestId: "RM0000039", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "139000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
+                    { requestId: "RM0000040", createdBy: "seller", createdOn: "Feb 03, 2025", purchaseOrg: "140000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
+                    { requestId: "RM0000041", createdBy: "Buyer", createdOn: "Feb 03, 2025", purchaseOrg: "141000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" },
+                    { requestId: "RM0000042", createdBy: "seller", createdOn: "Feb 03, 2025", purchaseOrg: "142000", status: "Draft", pendingWith: "PH3@pdilite.com", requestAging: "Draft" }
                 ],
                 draftCount: 0,
                 sentBackCount: 0,
@@ -368,9 +386,10 @@ sap.ui.define([
                 allCount: 0
             };
 
-            this._bDescendingSort = false;  // Initialize sort direction
-            this._sCurrentSortField = null;  // Track current sort field
-            this._sCurrentGroupField = null; // Track current group field
+            this._bDescendingSort = false;
+            this._sCurrentSortField = null;
+            this._bDescendingGroup = false;
+            this._sCurrentGroupField = null;
 
             this._updateTileCounts(oData);
             var oModel = new JSONModel(oData);
@@ -387,83 +406,311 @@ sap.ui.define([
         },
 
         onSort: function (oEvent) {
-            var oTable = this.byId("productsTable");
-            var oBinding = oTable.getBinding("items");
-            var sPath = "requestId"; // Default sort field, can be made dynamic
+            if (!this._oSortDialog) {
+                this._createSortDialog();
+            }
+            this._oSortDialog.getContent()[1].setSelectedIndex(this._bDescendingSort ? 1 : 0);
+            this._oSortDialog.getContent()[4].setSelectedIndex(this._sCurrentSortField ? this._getSortFieldIndex(this._sCurrentSortField) : 0);
+            this._oSortDialog.getBeginButton().setVisible(true);
+            this._oSortDialog.open();
+        },
 
-            this._bDescendingSort = !this._bDescendingSort;
-            this._sCurrentSortField = sPath;
-
-            var oSorter = new Sorter({
-                path: sPath,
-                descending: this._bDescendingSort,
-                group: false
+        _createSortDialog: function () {
+            var oDialog = new Dialog({
+                title: "Sort",
+                contentWidth: "300px",
+                contentHeight: "300px",
+                beginButton: new Button({
+                    text: "OK",
+                    press: this._applySort.bind(this)
+                }),
+                endButton: new Button({
+                    text: "Cancel",
+                    press: function () {
+                        this._oSortDialog.close();
+                    }.bind(this)
+                })
             });
 
-            oBinding.sort(oSorter);
-            this._updateColumnHeader(sPath);
-            MessageToast.show(`Sorted by Request ID: ${this._bDescendingSort ? "Descending" : "Ascending"}`);
+            var oSortOrderGroup = new RadioButtonGroup({
+                columns: 1,
+                selectedIndex: this._bDescendingSort ? 1 : 0,
+                select: function (oEvent) {
+                    this._bDescendingSort = oEvent.getParameter("selectedIndex") === 1;
+                }.bind(this)
+            });
+            oSortOrderGroup.addButton(new RadioButton({ text: "Ascending" }));
+            oSortOrderGroup.addButton(new RadioButton({ text: "Descending" }));
+
+            var oSortByGroup = new RadioButtonGroup({
+                columns: 1,
+                selectedIndex: this._sCurrentSortField ? this._getSortFieldIndex(this._sCurrentSortField) : 0,
+                select: function (oEvent) {
+                    var iIndex = oEvent.getParameter("selectedIndex");
+                    var sSelectedField = this._getSortFieldByIndex(iIndex);
+                    this._sCurrentSortField = sSelectedField;
+                }.bind(this)
+            });
+            oSortByGroup.addButton(new RadioButton({ text: "Request ID" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Created By" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Created On" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Purchase Organization" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Status" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Pending With" }));
+            oSortByGroup.addButton(new RadioButton({ text: "Request Aging" }));
+
+            var oResetButton = new Button({
+                text: "Reset",
+                press: function () {
+                    this._sCurrentSortField = null;
+                    this._bDescendingSort = false;
+                    oSortOrderGroup.setSelectedIndex(0);
+                    oSortByGroup.setSelectedIndex(0);
+                    this._applySortReset();
+                }.bind(this)
+            });
+
+            oDialog.addContent(new Label({ text: "Sort Order" }));
+            oDialog.addContent(oSortOrderGroup);
+            oDialog.addContent(oResetButton);
+            oDialog.addContent(new Label({ text: "Sort By" }));
+            oDialog.addContent(oSortByGroup);
+
+            this._oSortDialog = oDialog;
+        },
+
+        _getSortFieldIndex: function (sField) {
+            var aFields = ["requestId", "createdBy", "createdOn", "purchaseOrg", "status", "pendingWith", "requestAging"];
+            return aFields.indexOf(sField);
+        },
+
+        _getSortFieldByIndex: function (iIndex) {
+            var aFields = ["requestId", "createdBy", "createdOn", "purchaseOrg", "status", "pendingWith", "requestAging"];
+            return aFields[iIndex] || null;
+        },
+
+        _applySort: function () {
+            var oTable = this.byId("productsTable");
+            var oBinding = oTable.getBinding("items");
+            var aSorters = [];
+
+            // Apply grouping first (if exists)
+            if (this._sCurrentGroupField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentGroupField,
+                    descending: this._bDescendingGroup,
+                    group: true,
+                    groupHeaderFactory: this._getGroupHeader.bind(this)
+                }));
+            }
+
+            // Apply sorting (if exists)
+            if (this._sCurrentSortField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentSortField,
+                    descending: this._bDescendingSort,
+                    group: false
+                }));
+            }
+
+            oBinding.sort(aSorters);
+            this._updateColumnHeader();
+            oTable.getModel("products").refresh();
+            this._oSortDialog.getBeginButton().setVisible(false);
+            this._oSortDialog.close();
+            MessageToast.show(`Sorted by ${this._sCurrentSortField || "none"} ${this._bDescendingSort ? "Descending" : "Ascending"}`);
+        },
+
+        _applySortReset: function () {
+            var oTable = this.byId("productsTable");
+            var oBinding = oTable.getBinding("items");
+            var aSorters = [];
+
+            // Keep grouping intact if it exists
+            if (this._sCurrentGroupField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentGroupField,
+                    descending: this._bDescendingGroup,
+                    group: true,
+                    groupHeaderFactory: this._getGroupHeader.bind(this)
+                }));
+            }
+
+            this._sCurrentSortField = null;
+            this._bDescendingSort = false;
+            oBinding.sort(aSorters);
+            this._updateColumnHeader();
+            oTable.getModel("products").refresh();
+            MessageToast.show("Sorting reset");
         },
 
         onGroup: function (oEvent) {
+            if (!this._oGroupDialog) {
+                this._createGroupDialog();
+            }
+            this._oGroupDialog.getContent()[1].setSelectedIndex(this._bDescendingGroup ? 1 : 0);
+            this._oGroupDialog.getContent()[4].setSelectedIndex(this._sCurrentGroupField ? this._getGroupFieldIndex(this._sCurrentGroupField) : 7);
+            this._oGroupDialog.getBeginButton().setVisible(true);
+            this._oGroupDialog.open();
+        },
+
+        _createGroupDialog: function () {
+            var oDialog = new Dialog({
+                title: "Group",
+                contentWidth: "300px",
+                contentHeight: "300px",
+                beginButton: new Button({
+                    text: "OK",
+                    press: this._applyGroup.bind(this)
+                }),
+                endButton: new Button({
+                    text: "Cancel",
+                    press: function () {
+                        this._oGroupDialog.close();
+                    }.bind(this)
+                })
+            });
+
+            var oGroupOrderGroup = new RadioButtonGroup({
+                columns: 1,
+                selectedIndex: this._bDescendingGroup ? 1 : 0,
+                select: function (oEvent) {
+                    this._bDescendingGroup = oEvent.getParameter("selectedIndex") === 1;
+                }.bind(this)
+            });
+            oGroupOrderGroup.addButton(new RadioButton({ text: "Ascending" }));
+            oGroupOrderGroup.addButton(new RadioButton({ text: "Descending" }));
+
+            var oGroupByGroup = new RadioButtonGroup({
+                columns: 1,
+                selectedIndex: this._sCurrentGroupField ? this._getGroupFieldIndex(this._sCurrentGroupField) : 7,
+                select: function (oEvent) {
+                    var iIndex = oEvent.getParameter("selectedIndex");
+                    var sSelectedField = this._getGroupFieldByIndex(iIndex);
+                    this._sCurrentGroupField = sSelectedField;
+                }.bind(this)
+            });
+            oGroupByGroup.addButton(new RadioButton({ text: "Request ID" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Created By" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Created On" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Purchase Organization" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Status" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Pending With" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "Request Aging" }));
+            oGroupByGroup.addButton(new RadioButton({ text: "(Not Grouped)" }));
+
+            var oResetButton = new Button({
+                text: "Reset",
+                press: function () {
+                    this._sCurrentGroupField = null;
+                    this._bDescendingGroup = false;
+                    oGroupOrderGroup.setSelectedIndex(0);
+                    oGroupByGroup.setSelectedIndex(7);
+                    this._applyGroupReset();
+                }.bind(this)
+            });
+
+            oDialog.addContent(new Label({ text: "Group Order" }));
+            oDialog.addContent(oGroupOrderGroup);
+            oDialog.addContent(oResetButton);
+            oDialog.addContent(new Label({ text: "Group By" }));
+            oDialog.addContent(oGroupByGroup);
+
+            this._oGroupDialog = oDialog;
+        },
+
+        _getGroupFieldIndex: function (sField) {
+            var aFields = ["requestId", "createdBy", "createdOn", "purchaseOrg", "status", "pendingWith", "requestAging", null];
+            return aFields.indexOf(sField);
+        },
+
+        _getGroupFieldByIndex: function (iIndex) {
+            var aFields = ["requestId", "createdBy", "createdOn", "purchaseOrg", "status", "pendingWith", "requestAging", null];
+            return aFields[iIndex] || null;
+        },
+
+        _applyGroup: function () {
             var oTable = this.byId("productsTable");
             var oBinding = oTable.getBinding("items");
-            var sPath = "status"; // Default group field, can be made dynamic
+            var aSorters = [];
 
-            if (this._sCurrentGroupField === sPath) {
-                // Remove grouping
-                this._sCurrentGroupField = null;
-                oBinding.sort(null);
-                this._updateColumnHeader(null);
-                MessageToast.show("Grouping removed");
-            } else {
-                // Apply grouping
-                this._sCurrentGroupField = sPath;
-                var oSorter = new Sorter({
-                    path: sPath,
-                    descending: false,
+            // Apply grouping first (if exists)
+            if (this._sCurrentGroupField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentGroupField,
+                    descending: this._bDescendingGroup,
                     group: true,
-                    groupHeaderFactory: this._getGroupHeader
-                });
-                oBinding.sort(oSorter);
-                this._updateColumnHeader(sPath);
-                MessageToast.show(`Grouped by Status`);
+                    groupHeaderFactory: this._getGroupHeader.bind(this)
+                }));
             }
+
+            // Apply sorting (if exists)
+            if (this._sCurrentSortField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentSortField,
+                    descending: this._bDescendingSort,
+                    group: false
+                }));
+            }
+
+            oBinding.sort(aSorters);
+            this._updateColumnHeader();
+            oTable.getModel("products").refresh();
+            this._oGroupDialog.getBeginButton().setVisible(false);
+            this._oGroupDialog.close();
+            MessageToast.show(`Grouped by ${this._sCurrentGroupField || "none"} ${this._bDescendingGroup ? "Descending" : "Ascending"}`);
+        },
+
+        _applyGroupReset: function () {
+            var oTable = this.byId("productsTable");
+            var oBinding = oTable.getBinding("items");
+            var aSorters = [];
+
+            // Keep sorting intact if it exists
+            if (this._sCurrentSortField) {
+                aSorters.push(new Sorter({
+                    path: this._sCurrentSortField,
+                    descending: this._bDescendingSort,
+                    group: false
+                }));
+            }
+
+            this._sCurrentGroupField = null;
+            this._bDescendingGroup = false;
+            oBinding.sort(aSorters);
+            this._updateColumnHeader();
+            oTable.getModel("products").refresh();
+            MessageToast.show("Grouping reset");
         },
 
         _getGroupHeader: function (oGroup) {
             return new sap.m.GroupHeaderListItem({
-                title: oGroup.key,
-                upperCase: false,
-                count: oGroup.count
+                title: `${oGroup.key} (${oGroup.count})`,
+                upperCase: false
             });
         },
 
-        _updateColumnHeader: function (sPath) {
+        _updateColumnHeader: function () {
             var oTable = this.byId("productsTable");
             var aColumns = oTable.getColumns();
 
-            aColumns.forEach(function(oColumn) {
-                var oCustomData = oColumn.data("sortProperty");
+            aColumns.forEach(function (oColumn) {
+                var oSortCustomData = oColumn.data("sortProperty");
+                var oGroupCustomData = oColumn.data("groupProperty");
                 var oHeader = oColumn.getHeader();
 
-                if (oCustomData === sPath) {
-                    if (this._sCurrentGroupField === sPath) {
-                        oHeader.setIcon("sap-icon://group-2");
-                        oHeader.setTooltip("Grouped");
-                    } else if (this._sCurrentSortField === sPath) {
-                        oHeader.setIcon(
-                            this._bDescendingSort ? 
-                            "sap-icon://sort-descending" : 
-                            "sap-icon://sort-ascending"
-                        );
-                        oHeader.setTooltip(
-                            "Sorted " + (this._bDescendingSort ? "Descending" : "Ascending")
-                        );
-                    }
-                } else {
-                    oHeader.setIcon("");
-                    oHeader.setTooltip("");
+                oHeader.setIcon("");
+                oHeader.setTooltip("");
+
+                if (oGroupCustomData === this._sCurrentGroupField && this._sCurrentGroupField) {
+                    oHeader.setIcon("sap-icon://group-2");
+                    oHeader.setTooltip("Grouped " + (this._bDescendingGroup ? "Descending" : "Ascending"));
+                }
+                if (oSortCustomData === this._sCurrentSortField && this._sCurrentSortField) {
+                    oHeader.setIcon(
+                        this._bDescendingSort ? "sap-icon://sort-descending" : "sap-icon://sort-ascending"
+                    );
+                    oHeader.setTooltip("Sorted " + (this._bDescendingSort ? "Descending" : "Ascending"));
                 }
             }.bind(this));
         },
@@ -557,9 +804,50 @@ sap.ui.define([
         },
 
         onUploadPress: function () {
-            var oFileUploader = this.byId("fileUploader");
-            oFileUploader.clear();
-            oFileUploader.openFilePicker();
+            if (!this._oUploadDialog) {
+                this._createUploadDialog();
+            }
+            this._oUploadDialog.open();
+        },
+
+        _createUploadDialog: function () {
+            var oFileUploader = new FileUploader({
+                id: "fileUploader",
+                uploadOnChange: false,
+                change: this.onFileChange.bind(this),
+                uploadComplete: this.onUploadComplete.bind(this),
+                typeMissmatch: function () {
+                    MessageBox.error("Please upload a JSON file.");
+                }.bind(this)
+            });
+
+            this._oUploadDialog = new Dialog({
+                title: "Upload File",
+                contentWidth: "400px",
+                content: [
+                    oFileUploader,
+                    new Button({
+                        text: "Upload",
+                        press: function () {
+                            var oUploader = this.byId("fileUploader");
+                            if (oUploader.getValue()) {
+                                oUploader.upload();
+                            } else {
+                                MessageBox.error("Please select a file to upload.");
+                            }
+                        }.bind(this)
+                    })
+                ],
+                beginButton: new Button({
+                    text: "Close",
+                    press: function () {
+                        this._oUploadDialog.close();
+                    }.bind(this)
+                }),
+                afterClose: function () {
+                    this.byId("fileUploader").setValue("");
+                }.bind(this)
+            });
         },
 
         onFileChange: function (oEvent) {
@@ -573,7 +861,7 @@ sap.ui.define([
 
             if (oFile.type !== "application/json") {
                 MessageBox.error("Please upload a JSON file.");
-                oFileUploader.clear();
+                oFileUploader.setValue("");
                 return;
             }
 
@@ -595,7 +883,8 @@ sap.ui.define([
                     oModel.refresh();
                     MessageToast.show("Upload successful! " + oNewData.length + " items loaded.");
 
-                    oFileUploader.clear();
+                    oFileUploader.setValue("");
+                    this._oUploadDialog.close();
                 } catch (error) {
                     MessageBox.error("Upload failed: " + error.message);
                     console.error(error);
@@ -656,27 +945,30 @@ sap.ui.define([
             var aCells = oItem.getCells();
             var oModel = this.getView().getModel("products");
             var oData = oItem.getBindingContext("products").getObject();
-            var iIndex = oItem.getParent().indexOfItem(oItem);
 
             if (oButton.getIcon() === "sap-icon://edit") {
                 oButton.setIcon("sap-icon://save");
-                for (var i = 0; i < 6; i++) {
-                    var oText = aCells[i];
-                    if (oText instanceof sap.m.Text) {
-                        var oInput = new sap.m.Input({ value: oText.getText() });
-                        oItem.removeCell(oText);
+                for (var i = 0; i < 7; i++) {
+                    var oControl = aCells[i];
+                    if (oControl instanceof sap.m.Text || oControl instanceof sap.m.ObjectStatus) {
+                        var sValue = oControl.getText();
+                        var oInput = new sap.m.Input({ value: sValue });
+                        oItem.removeCell(oControl);
                         oItem.insertCell(oInput, i);
                     }
                 }
             } else {
                 oButton.setIcon("sap-icon://edit");
-                for (var i = 0; i < 6; i++) {
+                for (var i = 0; i < 7; i++) {
                     var oInput = aCells[i];
                     if (oInput instanceof sap.m.Input) {
                         var sValue = oInput.getValue();
-                        var oText = new sap.m.Text({ text: sValue });
+                        var oControl = (i === 4) ? new sap.m.ObjectStatus({
+                            text: sValue,
+                            state: sValue === "Approved" ? "Success" : sValue === "Rejected" ? "Error" : sValue === "Send Back" ? "Warning" : "None"
+                        }) : new sap.m.Text({ text: sValue });
                         oItem.removeCell(oInput);
-                        oItem.insertCell(oText, i);
+                        oItem.insertCell(oControl, i);
                         switch (i) {
                             case 0: oData.requestId = sValue; break;
                             case 1: oData.createdBy = sValue; break;
@@ -684,6 +976,7 @@ sap.ui.define([
                             case 3: oData.purchaseOrg = sValue; break;
                             case 4: oData.status = sValue; break;
                             case 5: oData.pendingWith = sValue; break;
+                            case 6: oData.requestAging = sValue; break;
                         }
                     }
                 }
