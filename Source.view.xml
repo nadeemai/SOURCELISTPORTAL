@@ -176,8 +176,6 @@ SORTED LIST CODE IN SAP UI5
                             <core:Item id="_IDGenItem5" key="Pending Request" text="Pending Request" />
                             <core:Item id="_IDGenItem6" key="Approved" text="Approved" />
                         </ComboBox>
-                        <!-- <Button id="_IDGenButton12" text="Sort" icon="sap-icon://sort" press=".onSort"/>
-                        <Button id="_IDGenButton11" text="Group" icon="sap-icon://group-2" press=".onGroup"/> -->
                         <Button id="clearButton" text="Clear" press=".onClearPress" />
                     </Toolbar>
 
@@ -234,6 +232,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="requestId"/>
+                                    <core:CustomData key="groupProperty" value="requestId"/>
                                 </customData>
                                 <header>
                                     <Text id="requestIdHeader" text="Request ID" />
@@ -242,6 +241,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn1">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="createdBy"/>
+                                    <core:CustomData key="groupProperty" value="createdBy"/>
                                 </customData>
                                 <header>
                                     <Text id="createdByHeader" text="Created By" />
@@ -250,6 +250,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn2">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="createdOn"/>
+                                    <core:CustomData key="groupProperty" value="createdOn"/>
                                 </customData>
                                 <header>
                                     <Text id="createdOnHeader" text="Created On" />
@@ -258,6 +259,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn3">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="purchaseOrg"/>
+                                    <core:CustomData key="groupProperty" value="purchaseOrg"/>
                                 </customData>
                                 <header>
                                     <Text id="purchaseOrgHeader" text="Purchase Organization" />
@@ -266,6 +268,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn4">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="status"/>
+                                    <core:CustomData key="groupProperty" value="status"/>
                                 </customData>
                                 <header>
                                     <Text id="statusHeader" text="Status" />
@@ -274,6 +277,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn5">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="pendingWith"/>
+                                    <core:CustomData key="groupProperty" value="pendingWith"/>
                                 </customData>
                                 <header>
                                     <Text id="pendingWithHeader" text="Pending With" />
@@ -282,6 +286,7 @@ SORTED LIST CODE IN SAP UI5
                             <Column id="_IDGenColumn6">
                                 <customData>
                                     <core:CustomData key="sortProperty" value="requestAging"/>
+                                    <core:CustomData key="groupProperty" value="requestAging"/>
                                 </customData>
                                 <header>
                                     <Text id="requestAgingHeader" text="Request Aging" />
@@ -329,7 +334,3 @@ SORTED LIST CODE IN SAP UI5
         </f:midColumnPages>
     </f:FlexibleColumnLayout>
 </mvc:View>
-
-
-
-
